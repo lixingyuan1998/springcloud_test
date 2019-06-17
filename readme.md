@@ -2,7 +2,7 @@ Spring Cloud 练习
 
 
 
-![1560428822867](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560428822867.png)
+![1560428822867](account-service\src\img\1560428822867.png)
 
 
 
@@ -14,7 +14,7 @@ zipkin port:9411
 @EnableZipkinServer
 ```
 
-![1560760625151](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760625151.png)
+![1560760625151](account-service\src\img\1560760625151.png)
 
 
 
@@ -24,7 +24,7 @@ discovery-service
 @EnableEurekaServer
 ```
 
-![1560760752487](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760752487.png)
+![1560760752487](account-service\src\img\1560760752487.png)
 
 gateway-service port:8765
 
@@ -41,7 +41,7 @@ zuul:
       serviceId: customer-service 
 ```
 
-![1560760797848](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760797848.png)
+![1560760797848](account-service\src\img\1560760797848.png)
 
 account-service port:2222
 
@@ -49,7 +49,7 @@ account-service port:2222
 @EnableDiscoveryClient
 ```
 
-![1560760852549](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760852549.png)
+![1560760852549](account-service\src\img\1560760852549.png)
 
 customer-service port:3333
 
@@ -58,7 +58,7 @@ customer-service port:3333
 @EnableFeignClients
 ```
 
-![1560761088109](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560761088109.png)
+![1560761088109](account-service\src\img\1560761088109.png)
 
-![1560761057136](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560761057136.png)
+![1560761057136](account-service\src\img\1560761057136.png)
 
