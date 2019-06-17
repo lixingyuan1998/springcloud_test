@@ -1,5 +1,64 @@
-## Part 1: Creating microservice using Spring Cloud, Eureka and Zuul.  [![Twitter](https://img.shields.io/twitter/follow/piotr_minkowski.svg?style=social&logo=twitter&label=Follow%20Me)](https://twitter.com/piotr_minkowski)
+Spring Cloud 练习
 
-Detailed description can be found here: [Part 1: Creating microservice using Spring Cloud, Eureka and Zuul](https://piotrminkowski.wordpress.com/2017/02/05/part-1-creating-microservice-using-spring-cloud-eureka-and-zuul/) 
 
+
+![1560428822867](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560428822867.png)
+
+
+
+
+
+zipkin port:9411
+
+```java
+@EnableZipkinServer
+```
+
+![1560760625151](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760625151.png)
+
+
+
+discovery-service
+
+```java
+@EnableEurekaServer
+```
+
+![1560760752487](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760752487.png)
+
+gateway-service port:8765
+
+```
+@EnableZuulProxy
+zuul:
+  prefix: /api
+  routes:
+    account: 
+      path: /account/**
+      serviceId: account-service
+    customer: 
+      path: /customer/**
+      serviceId: customer-service 
+```
+
+![1560760797848](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760797848.png)
+
+account-service port:2222
+
+```java
+@EnableDiscoveryClient
+```
+
+![1560760852549](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560760852549.png)
+
+customer-service port:3333
+
+```
+@EnableDiscoveryClient
+@EnableFeignClients
+```
+
+![1560761088109](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560761088109.png)
+
+![1560761057136](C:\Users\lxy94\AppData\Roaming\Typora\typora-user-images\1560761057136.png)
 
